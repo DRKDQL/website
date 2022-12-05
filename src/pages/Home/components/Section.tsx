@@ -3,7 +3,7 @@ import FadeInContainer from "src/components/FadeIn";
 import { useAppSelector } from "src/redux/hooks";
 
 const styles = {
-  container: "h-[200vh] p-[20px]",
+  container: "min-h-[calc(100vh-90px)] p-[20px] pt-[5px]",
   newContainer: "mt-[90px]",
 };
 

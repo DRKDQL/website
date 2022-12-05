@@ -23,6 +23,7 @@ module.exports = {
         h4: "2.4rem",
         h5: "2.2rem",
         h6: "2rem",
+        label: "1.4rem",
       },
     },
   },

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "src/redux/hooks";
 import { setSelectedTab } from "src/redux/slices/navigationSlice";
+import { scrollTo } from "src/helpers/viewport";
 
 const styles = {
   navItem: "flex flex-col items-center justify-center text-center",
@@ -22,6 +23,7 @@ const NavItem = (props: INavItemProps) => {
   const { title, shortTitle, value } = props;
 
   const selectedTab = useAppSelector((state) => state.navigation.selectedTab);
+  const navbarPos = useAppSelector((state) => state.navigation.navbarPos);
   const dispatch = useAppDispatch();
 
   const selected = selectedTab === value;
@@ -39,6 +41,7 @@ const NavItem = (props: INavItemProps) => {
         }}
         onClick={() => {
           dispatch(setSelectedTab(value));
+          scrollTo(navbarPos);
         }}
         className={styles.button}
       >
