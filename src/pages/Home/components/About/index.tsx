@@ -27,7 +27,7 @@ const About = (props: IAboutProps) => {
       <div className={styles.images}>
         <div className={styles.image}>
           <Picture
-            src="/assets/sections/home/about/portrait.jpg"
+            src="/assets/sections/home/about/portrait.svg"
             alt="Photo of Derek Daquel"
             aspectRatio={ASPECT_RATIO_PORTRAIT}
             height={250}

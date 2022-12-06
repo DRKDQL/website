@@ -3,13 +3,17 @@ import Section from "../Section";
 import ProjectGrid from "../ProjectGrid";
 import ProjectCard from "../ProjectCard";
 
-const styles = {};
+const styles = {
+  text: "text-white text-center",
+};
 
 export interface IBusinessProps {}
 
 const Business = (props: IBusinessProps) => {
   return (
     <Section>
+      <br />
+      <div className={styles.text}>Click on the cards to view the project </div>
       <ReleaseCategory type="Live" />
       <ProjectGrid>
         <ProjectCard
