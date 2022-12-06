@@ -1,52 +1,100 @@
 import { BsGlobe } from "react-icons/bs";
 import { FaTools } from "react-icons/fa";
-import Picture from "src/components/Picture";
-import { ASPECT_RATIO_PROJECT_COVER } from "src/helpers/picture";
+import { AiFillInstagram } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const styles = {
-  container: "grid grid-rows-2 bg-white rounded-[20px]",
-  image: "bg-grey p-[10px]",
-  textContainer: "grid grid-rows-3",
+  container: "bg-white rounded-[20px] cursor-pointer",
+  category:
+    "flex-center p-[10px] rounded-t-[15px] text-white uppercase h-[50px]",
+  titleContainer: "flex-col-center text-center pt-[10px] h-[90px]",
   title: "text-h5",
-  heading: "flex flex-col justify-center items-center text-center",
-  link: "flex space-x-3 items-center text-label text-dark-blue",
-  caption: "flex items-center text-center justify-center px-[20px] pb-[15px]",
-  toolsContainer: "",
-  toolsHeading:
-    "text-label flex justify-center text-center items-center space-x-3 mb-[5px]",
+  icon: "flex-center text-center",
+  link: "flex-center text-center space-x-3 text-label",
+  contentContainer:
+    "tablet:grid tablet:grid-rows-2 tablet:h-[calc(100%-140px)]",
+  caption: "flex-center text-center p-[10px] cursor-pointer",
+  toolsContainer: "p-[10px]",
+  toolsHeading: "flex-center items-center text-label space-x-3 mb-[5px]",
   toolsGrid: "grid grid-cols-3 gap-6 px-[20px] pb-[10px]",
   toolsGridItem:
-    "bg-dark-pink rounded-[5px] text-white text-label flex justify-center items-center text-center",
-  toolsTBAContainer: "flex items-center justify-center",
+    "flex-center text-center rounded-[5px] text-white text-small py-[2px]",
+  toolsTBAContainer: "flex-center",
   toolsTBA:
-    "text-label text-center text-white bg-light-grey rounded-[5px] px-[5px]",
+    "text-center text-small text-white bg-light-grey rounded-[5px] px-[5px]",
 };
 
 export interface IProjectCardProps {
   title: string;
   link: string;
   caption: string;
-  category: "Websites" | "Designs" | "Blogs" | "Games" | "Edits";
+  category: "Website" | "Design" | "Blog" | "Game" | "Editing";
   linkType: "Website" | "Instagram";
-  imgSrc: string;
   tools: string[];
 }
 
 const ProjectCard = (props: IProjectCardProps) => {
-  const { title, link, caption, tools, imgSrc } = props;
+  const { title, link, linkType, caption, tools, category } = props;
+  const router = useRouter();
+
+  const getCategoryBgColour = () => {
+    switch (category) {
+      case "Website":
+        return `bg-category-website`;
+      case "Design":
+        return `bg-category-design`;
+      case "Blog":
+        return `bg-category-blog`;
+      case "Game":
+        return `bg-category-game`;
+      case "Editing":
+        return `bg-category-editing`;
+    }
+  };
+
+  const getCategoryTextColour = () => {
+    switch (category) {
+      case "Website":
+        return `text-category-website`;
+      case "Design":
+        return `text-category-design`;
+      case "Blog":
+        return `text-category-blog`;
+      case "Game":
+        return `text-category-game`;
+      case "Editing":
+        return `text-category-editing`;
+    }
+  };
+
+  const getLinkIcon = () => {
+    switch (linkType) {
+      case "Website":
+        return <BsGlobe />;
+      case "Instagram":
+        return <AiFillInstagram />;
+    }
+  };
+
   return (
-    <div className={styles.container}>
-      <div className={styles.image}>
-        {/* <Picture src={imgSrc} alt="" aspectRatio={ASPECT_RATIO_PROJECT_COVER} /> */}
+    <motion.a
+      className={styles.container}
+      whileHover={{ scale: 1.05 }}
+      href={`https://${link}`}
+    >
+      <div className={`${styles.category} ${getCategoryBgColour()}`}>
+        {category}
       </div>
-      <div className={styles.textContainer}>
-        <div className={styles.heading}>
-          <div className={styles.title}> {title} </div>
-          <div className={styles.link}>
-            <BsGlobe /> <div> {link} </div>
-          </div>
+      <div className={styles.titleContainer}>
+        <div className={styles.title}> {title} </div>
+        <div className={`${styles.link} ${getCategoryTextColour()}`}>
+          {getLinkIcon()}
+          <div> {link} </div>
         </div>
+      </div>
+      <div className={styles.contentContainer}>
         <label className={styles.caption}> {caption} </label>
         <div className={styles.toolsContainer}>
           <div className={styles.toolsHeading}>
@@ -62,7 +110,12 @@ const ProjectCard = (props: IProjectCardProps) => {
             <div className={styles.toolsGrid}>
               {tools.map((t) => {
                 return (
-                  <div className={styles.toolsGridItem} key={uuidv4()}>
+                  <div
+                    className={`${
+                      styles.toolsGridItem
+                    } ${getCategoryBgColour()}`}
+                    key={uuidv4()}
+                  >
                     {t}
                   </div>
                 );
@@ -71,7 +124,7 @@ const ProjectCard = (props: IProjectCardProps) => {
           )}
         </div>
       </div>
-    </div>
+    </motion.a>
   );
 };
 

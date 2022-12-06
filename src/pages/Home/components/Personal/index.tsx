@@ -2,8 +2,6 @@ import ProjectCard from "src/pages/Home/components/ProjectCard";
 import Section from "../Section";
 import ReleaseCategory from "../ReleaseCategory";
 import ProjectGrid from "../ProjectGrid";
-import { PROJECT_COVER_FOLDER } from "src/helpers/picture";
-
 const styles = {};
 
 export interface IPersonalProps {}
@@ -16,11 +14,10 @@ const Personal = (props: IPersonalProps) => {
         <ProjectCard
           title="Spoons Online Multiplayer Game"
           link="spoons.drkdql.com"
-          caption="A web / desktop version of the card game Spoons. Spoons is a card game I have played several times with my friends and cousins"
+          caption="A web / desktop version of the card game Spoons. Spoons is a card game I have played several times with my friends and family."
           tools={[]}
-          category="Games"
+          category="Game"
           linkType="Website"
-          imgSrc={`${PROJECT_COVER_FOLDER}/spoons.jpg`}
         />
       </ProjectGrid>
       <ReleaseCategory type="Live" />
@@ -29,19 +26,36 @@ const Personal = (props: IPersonalProps) => {
           title="Personal Website"
           link="www.derekdaquel.com"
           caption="A more personal website for my career experience and endeavours I pursue (not restricted to online content and technology)."
-          tools={["NextJS", "Tailwind CSS", "Github Pages"]}
-          category="Websites"
+          tools={[
+            "NextJS",
+            "Tailwind CSS",
+            "Github Pages",
+            "Namecheap Domains",
+          ]}
+          category="Website"
           linkType="Website"
-          imgSrc={`${PROJECT_COVER_FOLDER}/personal.jpg`}
         />
         <ProjectCard
-          title="Brand Website"
+          title="DRKDQL"
           link="www.drkdql.com"
           caption="This very website you are looking at was built by myself to showcase projects and online content I create."
-          tools={["NextJS", "Tailwind CSS", "Netlify"]}
-          category="Websites"
+          tools={[
+            "NextJS",
+            "Redux",
+            "Tailwind CSS",
+            "Netlify",
+            "Namecheap Domains",
+          ]}
+          category="Website"
           linkType="Website"
-          imgSrc={`${PROJECT_COVER_FOLDER}/brand.jpg`}
+        />
+        <ProjectCard
+          title="Retired Allstars Social Media"
+          link="www.instagram.com/retiredallstars"
+          caption="I have been managing my basketball team's social media account and posting weekly scores, stats, highlights and leaderboard."
+          tools={["Figma", "Davinci Resolve", "Adobe Photoshop"]}
+          category="Editing"
+          linkType="Instagram"
         />
       </ProjectGrid>
     </Section>

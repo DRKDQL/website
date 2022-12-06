@@ -19,6 +19,8 @@ export interface IPictureProps {
   imageStyle?: any;
   imageClass?: any;
   aspectRatio: number;
+  onClick?: any;
+  priority?: boolean;
 }
 
 const Picture = (props: IPictureProps) => {
@@ -31,6 +33,8 @@ const Picture = (props: IPictureProps) => {
     containerClass,
     imageStyle,
     imageClass,
+    onClick,
+    priority,
   } = props;
 
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
@@ -87,9 +91,10 @@ const Picture = (props: IPictureProps) => {
         src={src}
         alt={alt}
         layout="fill"
-        priority={false}
+        priority={priority}
         objectFit="contain"
         style={imageStyle}
+        onClick={onClick}
       />
     </div>
   );

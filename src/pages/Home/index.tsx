@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import Layout from "src/components/Layout";
 import { useAppDispatch, useAppSelector } from "src/redux/hooks";
+import About from "./components/About";
 import Blogs from "./components/Blogs";
 import Business from "./components/Business";
 import Cover from "./components/Cover";
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
         {selectedTab === 0 && <Personal />}
         {selectedTab === 1 && <Business />}
         {selectedTab === 2 && <Blogs />}
+        {selectedTab === 3 && <About />}
       </Layout>
     </>
   );

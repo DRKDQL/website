@@ -1,7 +1,7 @@
 import Section from "../Section";
 
 const styles = {
-  heading: "text-h2 text-center text-white",
+  heading: "text-h4 text-center text-white",
 };
 
 export interface IBlogsProps {}
@@ -9,7 +9,12 @@ export interface IBlogsProps {}
 const Blogs = (props: IBlogsProps) => {
   return (
     <Section>
-      <div className={styles.heading}> No blog posts yet. Stay tuned! </div>
+      <br />
+      <div className={styles.heading}>
+        <div> Blog posts are currently being planned out. </div>
+        <br />
+        <div> Stay tuned :) </div>
+      </div>
     </Section>
   );
 };

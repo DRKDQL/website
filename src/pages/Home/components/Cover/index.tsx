@@ -8,7 +8,10 @@ import Area from "./Area";
 import { motion } from "framer-motion";
 import { scrollTo, useIntersection } from "src/helpers/viewport";
 import { useAppDispatch, useAppSelector } from "src/redux/hooks";
-import { setFixedNavbar } from "src/redux/slices/navigationSlice";
+import {
+  setFixedNavbar,
+  setSelectedTab,
+} from "src/redux/slices/navigationSlice";
 
 const styles = {
   container:
@@ -65,6 +68,7 @@ const Cover = (props: ICoverProps) => {
         whileHover={{ scale: 1.1 }}
         onClick={() => {
           scrollTo(navbarPos);
+          dispatch(setSelectedTab(0));
         }}
       >
         {<BsArrowDownCircleFill />}

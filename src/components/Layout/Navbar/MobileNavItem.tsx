@@ -1,21 +1,24 @@
-import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "src/redux/hooks";
-import { setSelectedTab } from "src/redux/slices/navigationSlice";
+import {
+  setMobileMenuOpen,
+  setSelectedTab,
+} from "src/redux/slices/navigationSlice";
 import { scrollTo } from "src/helpers/viewport";
 
 const styles = {
-  navItem: "flex-center text-center no-select",
+  container: "flex-center text-center text-black",
   text: "",
   button: "flex-col-center",
+  selectedButton: "flex-col-center text-dark-blue text-h4",
   underline: "h-[2px] w-[66%] rounded-[10px] bg-white",
 };
 
-export interface INavItemProps {
+export interface MobileNavItem {
   title: string;
   value: number;
 }
 
-const NavItem = (props: INavItemProps) => {
+const MobileNavItem = (props: MobileNavItem) => {
   const { title, value } = props;
 
   const selectedTab = useAppSelector((state) => state.navigation.selectedTab);
@@ -25,27 +28,19 @@ const NavItem = (props: INavItemProps) => {
   const selected = selectedTab === value;
 
   return (
-    <div className={styles.navItem}>
-      <motion.button
-        animate={{
-          scale: selected ? 1.4 : 1,
-          color: selected ? "white" : "",
-        }}
-        whileHover={{
-          scale: 1.1,
-          color: "white",
-        }}
+    <div className={styles.container}>
+      <button
         onClick={() => {
           dispatch(setSelectedTab(value));
+          dispatch(setMobileMenuOpen(false));
           scrollTo(navbarPos);
         }}
-        className={styles.button}
+        className={selected ? styles.selectedButton : styles.button}
       >
         <div className={styles.text}> {title} </div>
-        {/* {selected && <div className={styles.underline} />} */}
-      </motion.button>
+      </button>
     </div>
   );
 };
 
-export default NavItem;
+export default MobileNavItem;

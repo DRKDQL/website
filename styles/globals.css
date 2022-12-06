@@ -9,59 +9,70 @@
 
 html {
   font-size: 62.5%;
-  padding: 0;
-  margin: 0;
+  @apply p-0 m-0;
 }
 
 body {
-  padding: 0;
-  margin: 0;
   font-family: Quicksand, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #5c5c5c;
-  color: #242526;
-  font-size: 1.8rem;
   font-weight: lighter;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-  text-transform: uppercase;
+  @apply bg-dark-grey text-dark-grey text-paragraph p-0 m-0;
 }
 
 h1 {
-  font-size: 3.6rem;
+  @apply text-h1;
 }
 
 h2 {
-  font-size: 3rem;
+  @apply text-h2;
 }
 
 h3 {
-  font-size: 2.8rem;
+  @apply text-h3;
 }
 
 h4 {
-  font-size: 2.4rem;
+  @apply text-h4;
 }
 
 h5 {
-  font-size: 2.2rem;
+  @apply text-h5;
 }
 
 h6 {
-  font-size: 2rem;
+  @apply text-h6;
 }
 
 p {
-  font-size: 1.8rem;
+  @apply text-paragraph;
 }
 
 label {
-  font-size: 1.4rem;
+  @apply text-label;
+}
+
+/* CUSTOM TAILWIND COMBINATIONS */
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-col-center {
+  @apply flex flex-col justify-center items-center;
+}
+
+.brand-gradient {
+  @apply bg-gradient-to-r from-light-blue to-light-pink;
+}
+
+/* CUSTOM CSS */
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
