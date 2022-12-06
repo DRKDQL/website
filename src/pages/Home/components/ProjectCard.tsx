@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 const styles = {
-  container: "bg-white rounded-[20px] cursor-pointer",
+  container: "bg-white rounded-[20px]",
   category:
     "flex-center p-[10px] rounded-t-[15px] text-white uppercase h-[50px]",
   titleContainer: "flex-col-center text-center pt-[10px] h-[90px]",
@@ -15,7 +15,7 @@ const styles = {
   link: "flex-center text-center space-x-3 text-label",
   contentContainer:
     "tablet:grid tablet:grid-rows-2 tablet:h-[calc(100%-140px)]",
-  caption: "flex-center text-center p-[10px] cursor-pointer",
+  caption: "flex-center text-center p-[10px]",
   toolsContainer: "p-[10px]",
   toolsHeading: "flex-center items-center text-label space-x-3 mb-[5px]",
   toolsGrid: "grid grid-cols-3 gap-6 px-[20px] pb-[10px]",
@@ -33,10 +33,11 @@ export interface IProjectCardProps {
   category: "Website" | "Design" | "Blog" | "Game" | "Editing";
   linkType: "Website" | "Instagram";
   tools: string[];
+  disabled?: boolean;
 }
 
 const ProjectCard = (props: IProjectCardProps) => {
-  const { title, link, linkType, caption, tools, category } = props;
+  const { title, link, linkType, caption, tools, category, disabled } = props;
   const router = useRouter();
 
   const getCategoryBgColour = () => {
@@ -78,53 +79,64 @@ const ProjectCard = (props: IProjectCardProps) => {
     }
   };
 
+  const getCursorStyle = () => {
+    return disabled ? "cursor-default" : "cursor-pointer";
+  };
+
   return (
-    <motion.a
-      className={styles.container}
-      whileHover={{ scale: 1.05 }}
-      href={`https://${link}`}
-    >
-      <div className={`${styles.category} ${getCategoryBgColour()}`}>
-        {category}
-      </div>
-      <div className={styles.titleContainer}>
-        <div className={styles.title}> {title} </div>
-        <div className={`${styles.link} ${getCategoryTextColour()}`}>
-          {getLinkIcon()}
-          <div> {link} </div>
+    <>
+      <motion.div
+        className={`${styles.container} ${getCursorStyle()}`}
+        whileHover={{ scale: disabled ? 1 : 1.05 }}
+        onClick={() => {
+          if (!disabled) router.push(`https://${link}`);
+        }}
+      >
+        <div className={`${styles.category} ${getCategoryBgColour()}`}>
+          {category}
         </div>
-      </div>
-      <div className={styles.contentContainer}>
-        <label className={styles.caption}> {caption} </label>
-        <div className={styles.toolsContainer}>
-          <div className={styles.toolsHeading}>
-            <FaTools />
-            <div> Tools / Skills: </div>
+        <div className={styles.titleContainer}>
+          <div className={styles.title}> {title} </div>
+          <div className={`${styles.link} ${getCategoryTextColour()}`}>
+            {getLinkIcon()}
+            <div> {link} </div>
           </div>
-          {tools.length === 0 && (
-            <div className={styles.toolsTBAContainer}>
-              <div className={styles.toolsTBA}> T.B.A </div>
-            </div>
-          )}
-          {tools.length > 0 && (
-            <div className={styles.toolsGrid}>
-              {tools.map((t) => {
-                return (
-                  <div
-                    className={`${
-                      styles.toolsGridItem
-                    } ${getCategoryBgColour()}`}
-                    key={uuidv4()}
-                  >
-                    {t}
-                  </div>
-                );
-              })}
-            </div>
-          )}
         </div>
-      </div>
-    </motion.a>
+        <div className={styles.contentContainer}>
+          <label className={`${styles.caption} ${getCursorStyle()}`}>
+            {" "}
+            {caption}{" "}
+          </label>
+          <div className={styles.toolsContainer}>
+            <div className={styles.toolsHeading}>
+              <FaTools />
+              <div> Tools / Skills: </div>
+            </div>
+            {tools.length === 0 && (
+              <div className={styles.toolsTBAContainer}>
+                <div className={styles.toolsTBA}> T.B.A </div>
+              </div>
+            )}
+            {tools.length > 0 && (
+              <div className={styles.toolsGrid}>
+                {tools.map((t) => {
+                  return (
+                    <div
+                      className={`${
+                        styles.toolsGridItem
+                      } ${getCategoryBgColour()}`}
+                      key={uuidv4()}
+                    >
+                      {t}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </>
   );
 };
 

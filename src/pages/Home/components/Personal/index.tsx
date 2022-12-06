@@ -2,13 +2,18 @@ import ProjectCard from "src/pages/Home/components/ProjectCard";
 import Section from "../Section";
 import ReleaseCategory from "../ReleaseCategory";
 import ProjectGrid from "../ProjectGrid";
-const styles = {};
+
+const styles = {
+  text: "text-white text-center",
+};
 
 export interface IPersonalProps {}
 
 const Personal = (props: IPersonalProps) => {
   return (
     <Section>
+      <br />
+      <div className={styles.text}>Click on the cards to view the project </div>
       <ReleaseCategory type="Upcoming" />
       <ProjectGrid>
         <ProjectCard
@@ -36,6 +41,14 @@ const Personal = (props: IPersonalProps) => {
           linkType="Website"
         />
         <ProjectCard
+          title="Retired Allstars Social Media"
+          link="www.instagram.com/retiredallstars"
+          caption="I have been managing my basketball team's social media account and posting weekly scores, stats, highlights and leaderboard."
+          tools={["Figma", "Davinci Resolve", "Adobe Photoshop"]}
+          category="Editing"
+          linkType="Instagram"
+        />
+        <ProjectCard
           title="DRKDQL"
           link="www.drkdql.com"
           caption="This very website you are looking at was built by myself to showcase projects and online content I create."
@@ -48,14 +61,7 @@ const Personal = (props: IPersonalProps) => {
           ]}
           category="Website"
           linkType="Website"
-        />
-        <ProjectCard
-          title="Retired Allstars Social Media"
-          link="www.instagram.com/retiredallstars"
-          caption="I have been managing my basketball team's social media account and posting weekly scores, stats, highlights and leaderboard."
-          tools={["Figma", "Davinci Resolve", "Adobe Photoshop"]}
-          category="Editing"
-          linkType="Instagram"
+          disabled
         />
       </ProjectGrid>
     </Section>
