@@ -29,7 +29,7 @@ const Personal = (props: IPersonalProps) => {
       <ProjectGrid>
         <ProjectCard
           title="Personal Website"
-          link="www.derekdaquel.com"
+          link="derekdaquel.com"
           caption="A more personal website for my career experience and endeavours I pursue (not restricted to online content and technology)."
           tools={[
             "NextJS",
@@ -50,7 +50,7 @@ const Personal = (props: IPersonalProps) => {
         />
         <ProjectCard
           title="DRKDQL"
-          link="www.drkdql.com"
+          link="drkdql.com"
           caption="This very website you are looking at was built by myself to showcase projects and online content I create."
           tools={[
             "NextJS",

@@ -89,7 +89,7 @@ const ProjectCard = (props: IProjectCardProps) => {
         className={`${styles.container} ${getCursorStyle()}`}
         whileHover={{ scale: disabled ? 1 : 1.05 }}
         onClick={() => {
-          if (!disabled) router.push(`https://${link}`);
+          if (!disabled) window.open(`https://${link}`, "_blank", "noreferrer");
         }}
       >
         <div className={`${styles.category} ${getCategoryBgColour()}`}>
