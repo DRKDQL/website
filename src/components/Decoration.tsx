@@ -27,8 +27,6 @@ const Decoration = (props: IDecorationProps) => {
     setChildWidth(ref.current.offsetWidth);
   }, [ref]);
 
-  console.log(childWidth);
-
   return (
     <div className={styles.container}>
       <div
