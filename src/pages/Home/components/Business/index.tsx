@@ -14,12 +14,23 @@ const Business = (props: IBusinessProps) => {
     <Section>
       <br />
       <div className={styles.text}>Click on the cards to view the project </div>
-      <ReleaseCategory type="Live" />
+      <ReleaseCategory type="Upcoming" />
+      <ProjectGrid>
+        <ProjectCard
+          title="Little Learners Speech Therapy"
+          link="littlelearnerstherapy.com.au"
+          caption="Details to come..."
+          tools={[]}
+          category="Website"
+          linkType="Website"
+        />
+      </ProjectGrid>
+      <ReleaseCategory type="Archived" />
       <ProjectGrid>
         <ProjectCard
           title="Speak & Shine Speech Pathology"
-          link="speakandshinespeechpathology.com.au"
-          caption="I built a website for my cousin's Mobile Speech pathology business that diagnoses and treats communication difficulties in children 1 - 18 years in the area of Marrickville and surrounding Suburbs."
+          link="speakandshine.netlify.app"
+          caption="The website I initially built / tested for a Mobile Speech pathology business. The founders have rebranded and will continue as Little Learners Speech Therapy. Previously available at: speakandshinespeechpathology.com.au."
           tools={[
             "NextJS",
             "Tailwind CSS",

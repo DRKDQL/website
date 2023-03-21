@@ -17,12 +17,13 @@ const Personal = (props: IPersonalProps) => {
       <ReleaseCategory type="Upcoming" />
       <ProjectGrid>
         <ProjectCard
-          title="Spoons Online Multiplayer Game"
-          link="spoons.drkdql.com"
-          caption="A web / desktop version of the card game Spoons. Spoons is a card game I have played several times with my friends and family."
+          title="Untitled Mobile App"
+          link="T.B.A."
+          caption="Details to come..."
           tools={[]}
-          category="Game"
-          linkType="Website"
+          category="Mobile App"
+          linkType=""
+          disabled
         />
       </ProjectGrid>
       <ReleaseCategory type="Live" />
@@ -30,38 +31,43 @@ const Personal = (props: IPersonalProps) => {
         <ProjectCard
           title="Personal Website"
           link="derekdaquel.com"
-          caption="A more personal website for my career experience and endeavours I pursue (not restricted to online content and technology)."
+          caption="A very simple personal website for Work Experience, Projects (not restricted to tech) and Socials."
           tools={[
             "NextJS",
             "Tailwind CSS",
-            "Github Pages",
+            "Cloudflare Pages",
             "Namecheap Domains",
           ]}
           category="Website"
           linkType="Website"
         />
         <ProjectCard
-          title="Retired Allstars Social Media"
+          title="Retired Allstars - Social Media Management"
           link="www.instagram.com/retiredallstars"
-          caption="I have been managing my basketball team's social media account and posting weekly scores, stats, highlights and leaderboard."
+          caption="Management + Photo / Video editing of weekly scores, stats, highlights and leaderboards."
           tools={["Figma", "Davinci Resolve", "Adobe Photoshop"]}
           category="Editing"
           linkType="Instagram"
         />
+      </ProjectGrid>
+      <ReleaseCategory type="Archived" />
+      <ProjectGrid>
         <ProjectCard
-          title="DRKDQL"
-          link="drkdql.com"
-          caption="This very website you are looking at was built by myself to showcase projects and online content I create."
+          title="Spoons Online Multiplayer Game"
+          link="spoons.drkdql.com"
+          caption="A web / desktop version of the card game Spoons. Spoons is a card game I have played several times with my friends and family. Development is currently paused."
           tools={[
             "NextJS",
-            "Redux",
             "Tailwind CSS",
-            "Netlify",
-            "Namecheap Domains",
+            "Firebase",
+            "Cloudflare Pages",
+            "Figma",
+            "OBS",
+            "TikTok",
+            "Davinci Resolve",
           ]}
-          category="Website"
+          category="Game"
           linkType="Website"
-          disabled
         />
       </ProjectGrid>
     </Section>

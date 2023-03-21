@@ -1,4 +1,4 @@
-import { FaHourglassStart } from "react-icons/fa";
+import { FaHourglassStart, FaArchive } from "react-icons/fa";
 import { BsBroadcastPin } from "react-icons/bs";
 import Decoration from "src/components/Decoration";
 
@@ -9,11 +9,11 @@ const styles = {
   text: "text-center",
   upcomingIcon: "p-[10px] rounded-[50%] bg-light-blue",
   liveIcon: "p-[10px] rounded-[50%] bg-light-green",
-  // decoration: "w-full bg-white h-[1px] mx-[20px]",
+  archivedIcon: "p-[10px] rounded-[50%] bg-light-red",
 };
 
 export interface IReleaseCategoryProps {
-  type: "Upcoming" | "Live";
+  type: "Upcoming" | "Live" | "Archived";
 }
 
 const ReleaseCategory = (props: IReleaseCategoryProps) => {
@@ -30,6 +30,12 @@ const ReleaseCategory = (props: IReleaseCategoryProps) => {
         return (
           <div className={styles.liveIcon}>
             <BsBroadcastPin />
+          </div>
+        );
+      case "Archived":
+        return (
+          <div className={styles.archivedIcon}>
+            <FaArchive />
           </div>
         );
     }
