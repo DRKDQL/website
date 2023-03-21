@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 const styles = {
-  grid: "grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-10",
+  grid: "grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-10 pb-[30px]",
 };
 
 export interface IProjectGridProps {

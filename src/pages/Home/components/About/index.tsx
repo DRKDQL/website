@@ -1,6 +1,6 @@
 import Decoration from "src/components/Decoration";
 import Picture from "src/components/Picture";
-import { ASPECT_RATIO_LOGO, ASPECT_RATIO_PORTRAIT } from "src/helpers/picture";
+import { ASPECT_RATIO_LOGO } from "src/helpers/picture";
 import Section from "../Section";
 import { FaTiktok } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
@@ -8,15 +8,16 @@ import { motion } from "framer-motion";
 
 const styles = {
   heading: "text-center text-white p-[20px]",
-  images: "flex-col-center space-y-10 p-[20px]",
+  images: "flex-col-center space-y-10 p-[20px] pt-[30px]",
   content: "text-center text-white p-[20px] space-y-6",
   contentHeading: "w-[300px] mb-[20px] font-bold",
   contentText: "text-center tablet:text-left",
   image: "flex-center",
   decoration: "w-full bg-white h-[1px] mx-[20px]",
   list: "space-y-1 mt-[10px] text-left",
-  socials: "flex-center tablet:justify-start space-x-10 py-[20px]",
+  socials: "flex-center space-x-10 py-[20px]",
   social: "flex-col-center cursor-pointer",
+  name: "text-center",
 };
 
 export interface IAboutProps {}
@@ -25,16 +26,6 @@ const About = (props: IAboutProps) => {
   return (
     <Section>
       <div className={styles.images}>
-        <div className={styles.image}>
-          <Picture
-            src="/assets/sections/home/about/portrait.svg"
-            alt="Photo of Derek Daquel"
-            aspectRatio={ASPECT_RATIO_PORTRAIT}
-            height={250}
-            imageClass="rounded-[20px]"
-            priority
-          />
-        </div>
         <div className={styles.image}>
           <Picture
             src="/assets/sections/home/Logo.svg"
@@ -50,14 +41,14 @@ const About = (props: IAboutProps) => {
             <h3 className={styles.contentHeading}>About the Brand</h3>
           </Decoration>
           <div className={styles.contentText}>
-            During June of 2022, I created a personal brand (DRKDQL) to attach
-            to any projects and online content I create throughout my career.
-            With most of my current experience as a Software Engineer being in
-            frontend web development, I am interested in working on fun and
-            hands-on projects in a wide range of areas. I will be taking an
-            unstructured, agile approach to my project development where I will
-            quickly develop plans but will learn mostly from pushing out content
-            or code as quick as I can and will adapt to new goals and mistakes.
+            During June of 2022, I created a personal brand to attach to any
+            projects and online content I create throughout my career. With most
+            of my current experience as a Software Engineer being in frontend
+            web development, I am interested in working on fun and hands-on
+            projects in a wide range of areas. I will be taking an unstructured,
+            agile approach to my project development where I will quickly
+            develop plans but will learn mostly from pushing out content or code
+            as quick as I can and will adapt to new goals and mistakes.
           </div>
         </div>
         <div>
@@ -94,8 +85,8 @@ const About = (props: IAboutProps) => {
             <h3 className={styles.contentHeading}>What will I create?</h3>
           </Decoration>
           <div className={styles.contentText}>
-            As of right now, I plan to create the following projects and online
-            content:
+            As of right now, I plan to create projects and online content
+            ranging from:
             <div className={styles.list}>
               <li> Websites </li>
               <li> Mobile Apps </li>
@@ -113,10 +104,10 @@ const About = (props: IAboutProps) => {
               What does DRKDQL stand for?
             </h3>
           </Decoration>
-          <div className={styles.contentText}>
+          <div className={styles.name}>
             It is my full name without the vowels.
           </div>
-          <div className={styles.contentText}>
+          <div className={styles.name}>
             <span className="text-light-blue font-bold">D</span>e
             <span className="text-light-pink font-bold">R</span>e
             <span className="text-light-blue font-bold">K</span>{" "}

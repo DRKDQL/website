@@ -1,9 +1,8 @@
 import { BsGlobe } from "react-icons/bs";
-import { FaTools } from "react-icons/fa";
+import { FaTools, FaLink } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
 
 const styles = {
   container: "bg-white rounded-[20px]",
@@ -30,15 +29,14 @@ export interface IProjectCardProps {
   title: string;
   link: string;
   caption: string;
-  category: "Website" | "Design" | "Blog" | "Game" | "Editing";
-  linkType: "Website" | "Instagram";
+  category: "Website" | "Design" | "Blog" | "Game" | "Editing" | "Mobile App";
+  linkType: "Website" | "Instagram" | "";
   tools: string[];
   disabled?: boolean;
 }
 
 const ProjectCard = (props: IProjectCardProps) => {
   const { title, link, linkType, caption, tools, category, disabled } = props;
-  const router = useRouter();
 
   const getCategoryBgColour = () => {
     switch (category) {
@@ -52,6 +50,8 @@ const ProjectCard = (props: IProjectCardProps) => {
         return `bg-category-game`;
       case "Editing":
         return `bg-category-editing`;
+      case "Mobile App":
+        return `bg-category-mobile-app`;
     }
   };
 
@@ -67,6 +67,8 @@ const ProjectCard = (props: IProjectCardProps) => {
         return `text-category-game`;
       case "Editing":
         return `text-category-editing`;
+      case "Mobile App":
+        return `text-category-mobile-app`;
     }
   };
 
@@ -76,6 +78,8 @@ const ProjectCard = (props: IProjectCardProps) => {
         return <BsGlobe />;
       case "Instagram":
         return <AiFillInstagram />;
+      default:
+        return <FaLink />;
     }
   };
 
@@ -104,8 +108,7 @@ const ProjectCard = (props: IProjectCardProps) => {
         </div>
         <div className={styles.contentContainer}>
           <label className={`${styles.caption} ${getCursorStyle()}`}>
-            {" "}
-            {caption}{" "}
+            {caption}
           </label>
           <div className={styles.toolsContainer}>
             <div className={styles.toolsHeading}>

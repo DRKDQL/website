@@ -15,11 +15,13 @@ module.exports = {
         "light-pink": "#F884D9",
         "dark-pink": "#DB3EB1",
         "light-green": "#39c213",
+        "light-red": "#f75a3e",
         "category-website": "#0079AA",
         "category-game": "green",
         "category-design": "#FAC800",
         "category-editing": "#9370DB",
         "category-blog": "#242526",
+        "category-mobile-app": "#e645b5",
       },
       padding: {},
       fontSize: {
