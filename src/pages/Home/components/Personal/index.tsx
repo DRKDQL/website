@@ -17,7 +17,16 @@ const Personal = (props: IPersonalProps) => {
       <ReleaseCategory type="Upcoming" />
       <ProjectGrid>
         <ProjectCard
-          title="Untitled Mobile App"
+          title="Untitled Mobile App #1"
+          link="T.B.A."
+          caption="Details to come..."
+          tools={[]}
+          category="Mobile App"
+          linkType=""
+          disabled
+        />
+        <ProjectCard
+          title="Untitled Mobile App #2"
           link="T.B.A."
           caption="Details to come..."
           tools={[]}
