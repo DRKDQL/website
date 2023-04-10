@@ -14,13 +14,21 @@ const Business = (props: IBusinessProps) => {
     <Section>
       <br />
       <div className={styles.text}>Click on the cards to view the project </div>
-      <ReleaseCategory type="Upcoming" />
+      <ReleaseCategory type="Live" />
       <ProjectGrid>
         <ProjectCard
           title="Little Learners Speech Therapy"
           link="littlelearnerstherapy.com.au"
-          caption="Details to come..."
-          tools={[]}
+          caption="A website for my friend's business. 
+Little Learners Speech Therapy offers mobile speech pathology services across Sydney's Eastern Suburbs. Services can be delivered within your child's preschool, school, home or via telehealth."
+          tools={[
+            "NextJS",
+            "Tailwind CSS",
+            "Cloudflare Pages",
+            "Namecheap Domains",
+            "Figma",
+            "FormSubmit.co",
+          ]}
           category="Website"
           linkType="Website"
         />
@@ -42,6 +50,7 @@ const Business = (props: IBusinessProps) => {
           ]}
           category="Website"
           linkType="Website"
+          archived
         />
       </ProjectGrid>
     </Section>

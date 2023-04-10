@@ -33,12 +33,23 @@ export interface IProjectCardProps {
   linkType: "Website" | "Instagram" | "";
   tools: string[];
   disabled?: boolean;
+  archived?: boolean;
 }
 
 const ProjectCard = (props: IProjectCardProps) => {
-  const { title, link, linkType, caption, tools, category, disabled } = props;
+  const {
+    title,
+    link,
+    linkType,
+    caption,
+    tools,
+    category,
+    disabled,
+    archived,
+  } = props;
 
   const getCategoryBgColour = () => {
+    if (archived) return "bg-archived";
     switch (category) {
       case "Website":
         return `bg-category-website`;
@@ -56,6 +67,7 @@ const ProjectCard = (props: IProjectCardProps) => {
   };
 
   const getCategoryTextColour = () => {
+    if (archived) return "text-archived";
     switch (category) {
       case "Website":
         return `text-category-website`;

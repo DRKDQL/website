@@ -77,6 +77,7 @@ const Personal = (props: IPersonalProps) => {
           ]}
           category="Game"
           linkType="Website"
+          archived
         />
       </ProjectGrid>
     </Section>
