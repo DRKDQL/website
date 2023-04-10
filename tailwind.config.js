@@ -22,6 +22,7 @@ module.exports = {
         "category-editing": "#9370DB",
         "category-blog": "#242526",
         "category-mobile-app": "#e645b5",
+        archived: "#5C5C5C",
       },
       padding: {},
       fontSize: {
