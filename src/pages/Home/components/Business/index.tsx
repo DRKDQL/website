@@ -24,6 +24,7 @@ Little Learners Speech Therapy offers mobile speech pathology services across Sy
           tools={[
             "NextJS",
             "Tailwind CSS",
+            "Google Workspace",
             "Cloudflare Pages",
             "Namecheap Domains",
             "Figma",
