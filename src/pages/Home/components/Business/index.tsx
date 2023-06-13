@@ -34,24 +34,16 @@ Little Learners Speech Therapy offers mobile speech pathology services across Sy
           linkType="Website"
         />
       </ProjectGrid>
-      <ReleaseCategory type="Archived" />
+       <ReleaseCategory type="Upcoming" />
       <ProjectGrid>
         <ProjectCard
-          title="Speak & Shine Speech Pathology"
-          link="speakandshine.netlify.app"
-          caption="The website I initially built / tested for a Mobile Speech pathology business. The founders have rebranded and will continue as Little Learners Speech Therapy. Previously available at: speakandshinespeechpathology.com.au."
-          tools={[
-            "NextJS",
-            "Tailwind CSS",
-            "Netlify",
-            "Google Workspace",
-            "Namecheap Domains",
-            "YouTube Streaming",
-            "OBS",
-          ]}
-          category="Website"
-          linkType="Website"
-          archived
+          title="A Coaching Hub App"
+          link="T.B.A."
+          caption="Details to come..."
+          tools={[]}
+          category="Mobile App"
+          linkType=""
+          disabled
         />
       </ProjectGrid>
     </Section>

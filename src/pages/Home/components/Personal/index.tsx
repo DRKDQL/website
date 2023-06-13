@@ -14,27 +14,6 @@ const Personal = (props: IPersonalProps) => {
     <Section>
       <br />
       <div className={styles.text}>Click on the cards to view the project </div>
-      <ReleaseCategory type="Upcoming" />
-      <ProjectGrid>
-        <ProjectCard
-          title="Untitled Mobile App #1"
-          link="T.B.A."
-          caption="Details to come..."
-          tools={[]}
-          category="Mobile App"
-          linkType=""
-          disabled
-        />
-        <ProjectCard
-          title="Untitled Mobile App #2"
-          link="T.B.A."
-          caption="Details to come..."
-          tools={[]}
-          category="Mobile App"
-          linkType=""
-          disabled
-        />
-      </ProjectGrid>
       <ReleaseCategory type="Live" />
       <ProjectGrid>
         <ProjectCard
@@ -57,6 +36,27 @@ const Personal = (props: IPersonalProps) => {
           tools={["Figma", "Davinci Resolve", "Adobe Photoshop"]}
           category="Editing"
           linkType="Instagram"
+        />
+      </ProjectGrid>
+      <ReleaseCategory type="Upcoming" />
+      <ProjectGrid>
+        <ProjectCard
+          title="A Guitar App"
+          link="T.B.A."
+          caption="Details to come..."
+          tools={[]}
+          category="Mobile App"
+          linkType=""
+          disabled
+        />
+        <ProjectCard
+          title="An Events App"
+          link="T.B.A."
+          caption="Details to come..."
+          tools={[]}
+          category="Mobile App"
+          linkType=""
+          disabled
         />
       </ProjectGrid>
       <ReleaseCategory type="Archived" />
