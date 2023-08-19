@@ -34,7 +34,7 @@ const Cover = (props: ICoverProps) => {
 
   useEffect(() => {
     dispatch(setFixedNavbar(!inView));
-  }, [inView]);
+  }, [inView, dispatch]);
 
   return (
     <div className={styles.container} ref={ref}>

@@ -14,7 +14,6 @@ const styles = {
   contentText: "text-center tablet:text-left",
   image: "flex-center",
   decoration: "w-full bg-white h-[1px] mx-[20px]",
-  list: "space-y-1 mt-[10px] text-left",
   socials: "flex-center space-x-10 py-[20px]",
   social: "flex-col-center cursor-pointer",
   name: "text-center",
@@ -87,7 +86,7 @@ const About = (props: IAboutProps) => {
           <div className={styles.contentText}>
             As of right now, I plan to create projects and online content
             ranging from:
-            <div className={styles.list}>
+            <ul>
               <li> Websites </li>
               <li> Mobile Apps </li>
               <li> Games </li>
@@ -95,7 +94,7 @@ const About = (props: IAboutProps) => {
               <li> Photo / video editing </li>
               <li> Blogs </li>
               <li> Tutorials </li>
-            </div>
+            </ul>
           </div>
         </div>
         <div>
