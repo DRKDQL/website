@@ -1,4 +1,4 @@
-import ProjectCard from "src/pages/Home/components/ProjectCard";
+import ProjectCard from "src/pages/home/components/ProjectCard";
 import Section from "../Section";
 import ReleaseCategory from "../ReleaseCategory";
 import ProjectGrid from "../ProjectGrid";

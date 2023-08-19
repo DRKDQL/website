@@ -40,7 +40,7 @@ const Navbar = (props: INavbarProps) => {
 
   useEffect(() => {
     dispatch(setNavbarPos(ref.current.offsetTop));
-  }, []);
+  }, [dispatch]);
 
   const getMobileSelectedTabName = () => {
     switch (selectedTab) {
