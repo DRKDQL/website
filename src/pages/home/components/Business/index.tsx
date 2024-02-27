@@ -18,6 +18,7 @@ const Business = (props: IBusinessProps) => {
       <ProjectGrid>
         <ProjectCard
           title="Little Learners Speech Therapy"
+          linkText="littlelearnerstherapy.com.au"
           link="littlelearnerstherapy.com.au"
           caption="A website for my friend's business. 
 Little Learners Speech Therapy offers mobile speech pathology services across Sydney's Eastern Suburbs. Services can be delivered within your child's preschool, school, home or via telehealth."
@@ -34,7 +35,7 @@ Little Learners Speech Therapy offers mobile speech pathology services across Sy
           linkType="Website"
         />
       </ProjectGrid>
-       <ReleaseCategory type="Upcoming" />
+       {/* <ReleaseCategory type="Upcoming" />
       <ProjectGrid>
         <ProjectCard
           title="A Coaching Hub App"
@@ -45,7 +46,7 @@ Little Learners Speech Therapy offers mobile speech pathology services across Sy
           linkType=""
           disabled
         />
-      </ProjectGrid>
+      </ProjectGrid> */}
     </Section>
   );
 };
