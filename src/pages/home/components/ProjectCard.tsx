@@ -1,6 +1,7 @@
 import { BsGlobe } from "react-icons/bs";
-import { FaTools, FaLink } from "react-icons/fa";
+import { FaTools, FaLink, FaGooglePlay } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
 
@@ -28,9 +29,10 @@ const styles = {
 export interface IProjectCardProps {
   title: string;
   link: string;
+  linkText: string;
   caption: string;
   category: "Website" | "Design" | "Blog" | "Game" | "Editing" | "Mobile App";
-  linkType: "Website" | "Instagram" | "";
+  linkType: "Website" | "Instagram" | "Mobile App" | "";
   tools: string[];
   disabled?: boolean;
   archived?: boolean;
@@ -40,6 +42,7 @@ const ProjectCard = (props: IProjectCardProps) => {
   const {
     title,
     link,
+    linkText,
     linkType,
     caption,
     tools,
@@ -90,6 +93,8 @@ const ProjectCard = (props: IProjectCardProps) => {
         return <BsGlobe />;
       case "Instagram":
         return <AiFillInstagram />;
+      case "Mobile App": 
+        return <FaGooglePlay />;
       default:
         return <FaLink />;
     }
@@ -115,7 +120,7 @@ const ProjectCard = (props: IProjectCardProps) => {
           <div className={styles.title}> {title} </div>
           <div className={`${styles.link} ${getCategoryTextColour()}`}>
             {getLinkIcon()}
-            <div> {link} </div>
+            <div> {linkText} </div>
           </div>
         </div>
         <div className={styles.contentContainer}>

@@ -17,7 +17,22 @@ const Personal = (props: IPersonalProps) => {
       <ReleaseCategory type="Live" />
       <ProjectGrid>
         <ProjectCard
+          title="reChord"
+          linkText="Google Play Store"
+          link="play.google.com/store/apps/details?id=com.drkdql.rechord&pcampaignid=web_share"
+          caption="My first personal app released to the Google Play Store to keep track of my favourite guitar songs / chords that I've learnt or want to learn."
+          tools={[
+            "Flutter",
+            "Android Studio",
+            "XCode",
+            "Google Play Console",
+          ]}
+          category="Mobile App"
+          linkType="Mobile App"
+        />
+        <ProjectCard
           title="Personal Website"
+          linkText="derekdaquel.com"
           link="derekdaquel.com"
           caption="A very simple personal website for Work Experience, Projects (not restricted to tech) and Socials."
           tools={[
@@ -31,39 +46,24 @@ const Personal = (props: IPersonalProps) => {
         />
         <ProjectCard
           title="Retired Allstars - Social Media Management"
+          linkText="@retiredallstars"
           link="www.instagram.com/retiredallstars"
           caption="Management + Photo / Video editing of weekly scores, stats, highlights and leaderboards."
           tools={["Figma", "Davinci Resolve", "Adobe Photoshop"]}
           category="Editing"
           linkType="Instagram"
         />
+        
       </ProjectGrid>
-      <ReleaseCategory type="Upcoming" />
+      {/* <ReleaseCategory type="Upcoming" />
       <ProjectGrid>
-        <ProjectCard
-          title="A Guitar App"
-          link="T.B.A."
-          caption="Details to come..."
-          tools={[]}
-          category="Mobile App"
-          linkType=""
-          disabled
-        />
-        <ProjectCard
-          title="An Events App"
-          link="T.B.A."
-          caption="Details to come..."
-          tools={[]}
-          category="Mobile App"
-          linkType=""
-          disabled
-        />
-      </ProjectGrid>
+      </ProjectGrid> */}
       <ReleaseCategory type="Archived" />
       <ProjectGrid>
         <ProjectCard
           title="Spoons Online Multiplayer Game"
           link="spoons.drkdql.com"
+          linkText="spoons.drkdql.com"
           caption="A web / desktop version of the card game Spoons. Spoons is a card game I have played several times with my friends and family. Development is currently paused."
           tools={[
             "NextJS",
