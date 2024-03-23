@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+}
+
+@layer utilities {
+}
+
+@layer base {
+	html,
+	body {
+		@apply bg-primary text-primary-content text-sizeP font-primary p-0 m-0;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-bold;
+	}
+
+	h1 {
+		@apply text-sizeH1;
+	}
+
+	h2 {
+		@apply text-sizeH2;
+	}
+
+	h3 {
+		@apply text-sizeH3;
+	}
+
+	h4 {
+		@apply text-sizeH4;
+	}
+
+	h5 {
+		@apply text-sizeH5;
+	}
+
+	h6 {
+		@apply text-sizeH6;
+	}
+
+	p {
+		@apply text-sizeP;
+	}
+
+	a {
+		@apply text-sizeP;
+	}
+
+	label {
+		@apply text-sizeLabel;
+	}
+
+	ul {
+		@apply space-y-1 list-disc list-outside ms-8;
+	}
+}
