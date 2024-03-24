@@ -1,8 +1,11 @@
 const vars = {
-	black: '#242526',
+	black: '#121212',
+	grey: '#242526',
 	blue: '#41B6E6',
 	purple: '#C3A6FF',
-	white: '#FFFFFF'
+	white: '#FFFFFF',
+	heightNavbar: '90px',
+	spacePage: '30px'
 };
 
 /** @type {import('tailwindcss').Config} */
@@ -30,9 +33,9 @@ export default {
 					...require('daisyui/src/theming/themes')['dark'],
 					primary: vars.black,
 					'primary-content': vars.white,
-					secondary: vars.blue,
+					secondary: vars.grey,
 					'secondary-content': vars.white,
-					accent: vars.purple,
+					accent: vars.blue,
 					'accent-content': vars.white,
 					neutral: vars.white,
 					'neutral-content': vars.black,
@@ -44,14 +47,30 @@ export default {
 	},
 	theme: {
 		extend: {
+			spacing: {
+				page: vars.spacePage,
+				content: `calc(${vars.heightNavbar} + 80px)`
+			},
+			height: {
+				navbar: vars.heightNavbar
+			},
+			minHeight: {
+				'dynamic-screen': '100dvh'
+			},
+			height: {
+				'dynamic-screen': '100dvh'
+			},
+			backgroundImage: {
+				gradient: `linear-gradient(to right, ${vars.blue}, ${vars.purple})`
+			},
 			fontFamily: {
 				primary: 'Urbanist Variable'
 			},
 			fontSize: {
-				sizeH1: '2.4rem',
-				sizeH2: '1.2rem',
-				sizeH3: '1.1rem',
-				sizeH4: '1.1rem',
+				sizeH1: '2.5rem',
+				sizeH2: '1.4rem',
+				sizeH3: '1.3rem',
+				sizeH4: '1.2rem',
 				sizeH5: '1.1rem',
 				sizeH6: '1rem',
 				sizeP: '1rem',

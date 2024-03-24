@@ -11,7 +11,7 @@
 @layer base {
 	html,
 	body {
-		@apply bg-primary text-primary-content text-sizeP font-primary p-0 m-0;
+		@apply bg-primary text-primary-content text-sizeP font-primary p-0 m-0 max-w-full;
 	}
 
 	h1,
